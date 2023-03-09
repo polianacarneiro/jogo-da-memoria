@@ -1,10 +1,9 @@
 const grid = document.querySelector('.grid');
 const spanPlayer = document.querySelector('.player');
 const timer = document.querySelector('.timer');
-
-const characters = [
+ /* aqui é o nome das imagens que utilizei, isso ira realziar a duplicidade deles para o jogo*/
+const personagens = [
 'calvo',
-'cantores',
 'gigi',
 'irmao-do-jorel',
 'juju',
@@ -24,9 +23,9 @@ const createElement = (tag, className) => {
   const checkEndGame = () => {
     const disabledCards = document.querySelectorAll('.disabled-card');
   
-    if (disabledCards.length === 20) {
+    if (disabledCards.length === 12) {
       clearInterval(this.loop);
-      alert(`Parabéns, ${spanPlayer.innerHTML}! Seu tempo foi de: ${timer.innerHTML}`);
+      alert(`Aeeee!!! ${spanPlayer.innerHTML}! Tempo de: ${timer.innerHTML}`);
     }
   }
   
@@ -97,7 +96,7 @@ const createElement = (tag, className) => {
   }
   
   const loadGame = () => {
-    const duplicateCharacters = [...characters, ...characters];
+    const duplicatePersonagens = [...personagens, ...personagens];
   
     const shuffledArray = duplicateCharacters.sort(() => Math.random() - 0.5);
   
